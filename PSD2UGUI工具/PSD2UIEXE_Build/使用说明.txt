@@ -1,0 +1,7 @@
+双击build.bat即可生成psd2ui.exe
+
+注意：
+1.确保正确安装了Node.js   （npm也需要安装，不过最新的Node.js已经集成了npm，直接安装Node.js即可）
+  下载地址：https://nodejs.org/en/download/
+  
+2.需要扩展逻辑请修改project文件夹内的index.js代码
