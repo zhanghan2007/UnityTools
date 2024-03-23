@@ -89,17 +89,7 @@ function exportPng(node, parent) {
     let fileName = autoRename ? (FILE_NAME + '_' + id) : node.name
     fileName = fileName.replace(/\//g, '').trim()
     fileName = fileName.trim()
-    // try {
-    //     if(node.layer.image._width == 0 && node.layer.image._height==0)
-    // {
-    //     return;
-    // }
-    // } catch (error) {
-    //     console.log(error)
-    //     console.log("***********************转图出现异常,让美术检查是否没有设置智能对象，图层名称："+fileName)
-    //     return;
-    // }
-    if(node.layer.image._width == 0 && node.layer.image._height==0)
+    if(node.layer.image.width() == 0 && node.layer.image.height()==0)
     {
         return;
     }
@@ -116,7 +106,7 @@ function exportPng(node, parent) {
     id += 1;
     if(imgDict[skin])
     {
-        console.log("========>注意，出现同名图片:"+skin);
+        console.log("======>注意，出现同名图片:"+skin);
         return;
     }
     else{
