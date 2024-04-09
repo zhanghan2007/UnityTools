@@ -98,6 +98,8 @@ function exportPng(node, parent) {
     let xy = getRelativePos(node);
     pngObj.x = xy[0];
     pngObj.y = xy[1];
+    pngObj.width = node.width;
+    pngObj.height = node.height;
     pngObj.isRoot = node.parent.isRoot()
     pngObj.imgName = fileName + '.png'
     pngObj.opacity = node.layer.opacity / 255
