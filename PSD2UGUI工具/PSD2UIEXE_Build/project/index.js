@@ -138,6 +138,8 @@ function exportText(node, parent) {
     node = node.export();
     txtObj.x = xy[0];
     txtObj.y = xy[1];
+    txtObj.width = node.width;
+    txtObj.height = node.height;
     txtObj.isRoot = node.parent ? node.parent.isRoot() : false
     txtObj.font = node.text.font.names[0]
     txtObj.fontSize = Math.round(node.text.font.sizes[0] * node.text.transform.yy)
