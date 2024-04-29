@@ -135,6 +135,15 @@ function exportText(node, parent) {
         txtObj.outlineColor = getColorFromPSObj(effects.FrFX)
         txtObj.outlineWidth = effects.FrFX["Sz  "].value
     }
+
+    //gradient
+    txtObj.gradient = effects?.GrFl?.enab ? true : false
+    if (txtObj.gradient) {
+        txtObj.gradientAngle = effects.GrFl["Angl"].value
+        txtObj.gradientCol1 = getColorFromPSObj(effects.GrFl["Grad"]["Clrs"][0])
+        txtObj.gradientCol2 = getColorFromPSObj(effects.GrFl["Grad"]["Clrs"][1])
+    }
+
     node = node.export();
     txtObj.x = xy[0];
     txtObj.y = xy[1];
@@ -171,7 +180,11 @@ function FindShadowObj(effects) {
 
 function getColorFromPSObj(obj) {
     let clr = obj["Clr "]
-    let arr = [clr["Rd  "], clr["Grn "], clr["Bl  "], obj.Opct.value / 100 * 255]
+    var alpht = 255
+    if(obj.Opct != null){
+        alpht = obj.Opct.value / 100 * 255
+    }
+    let arr = [Math.round(clr["Rd  "]) , Math.round(clr["Grn "]), Math.round(clr["Bl  "]), Math.round(alpht)]
     let str = ''
     arr.map((c, i) => {
         let s;
