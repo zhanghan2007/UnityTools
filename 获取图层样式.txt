@@ -1,0 +1,11 @@
+获取图层样式
+node.layer.objectEffects().data
+
+FrFX（描边）
+    enab: 是否开启
+    Clr:Bl Grn Rd (颜色)
+    Opct:value (透明度)
+        
+Drsh (投影)
+    enab: 是否开启
+    Clr:Bl Grn Rd (颜色)

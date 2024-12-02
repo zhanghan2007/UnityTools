@@ -1,0 +1,12 @@
+7b2dc21709e14d41849b76d624452acb
+http://localhost:8075/
+
+powershell
+net stop jenkins
+net start jenkins
+
+文件夹 cmd jenkins stop
+文件夹 cmd jenkins stop
+
+zhanghan
+230805
